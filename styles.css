@@ -1,0 +1,1080 @@
+body {
+    background-color: #faefe9; /* Color arena */
+    color: #333; /* Color del texto */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Fuente del texto */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu {
+    position: relative;
+    z-index: 10; /* Asegura que el menú esté por encima de otros elementos */
+    width: 100%;
+}
+/* Contenedor del logotipo */
+.logo-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1; /* Asegura que el logo siempre se quede en el lado derecho */
+}
+
+/* Estilo del logotipo */
+.logo {
+    width: 100px;  /* Ajusta el tamaño del logo */
+    height: auto;
+    max-width: 100%; /* Se asegura que el logo no se distorsione */
+}
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 200px;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+h1 {
+    text-align: center; /* Alinea el texto al lado derecho */
+}
+/* Contenedor del logotipo */
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea el logotipo a la izquierda */
+    align-items: center;
+    padding-left: center; /* Añade espacio entre el logotipo y el borde izquierdo */
+    gap: 10px; /* Añade espacio entre el logotipo y el título */
+    position: absolute; /* Saca el logotipo del flujo del documento */
+    top: 20px; /* Ajusta la posición vertical del logotipo */
+    left: 20px; /* Ajusta la posición horizontal del logotipo */
+    width: 190px; /* Tamaño del círculo */
+    height: 190px; /* Tamaño del círculo */
+    border-radius: 50%; /* Convierte el contenedor en un círculo */
+    background-color: #fff; /* Fondo blanco para el círculo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar el círculo */
+    z-index: 2;
+}
+/* Estilo del logotipo */
+.logo {
+    width: 190px; /* Ajusta el tamaño del logotipo */
+    height: auto;
+    object-fit: contain; /* Asegura que el logotipo se ajuste dentro del círculo */
+}
+/* Barra de navegación */
+nav {
+    background: #bb7f44;
+    padding: 10px 0;
+    width: 60%; /* Reducir el ancho de la barra de navegación */
+    margin: 0 auto; /* Mantenerla centrada */
+    border-radius: 10px; /* Bordes redondeados para mejor apariencia */
+    position: relative; /* Mantiene la barra en su lugar */
+    z-index: 1; /* Asegura que la barra esté por encima del logotipo */
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    background: #bb7f44;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: #555;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #8d7153;
+    padding: 0;
+    list-style: none;
+    border-radius: 5px;
+    width: 150%;
+}
+
+nav ul ul li a {
+    background: #d48453bd;
+    padding: 10px;
+    display: block;
+}
+
+nav ul ul li a:hover {
+    background: #555;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 220px;
+    float: left;
+    background: #f4f4f4;
+    padding: 15px;
+    border-right: 2px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    background: #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background: #bb7f44;
+    color: white;
+}
+
+/* Estilos para el contenido principal */
+.content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.form-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input, .form-container button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container input:focus, .form-container button:focus {
+    outline: none;
+    border-color: #bb7f44;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 900px; /* Ajusta el tamaño del carrusel */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    animation: slide 30s infinite; /* Cambio en la duración para que pase más despacio */
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item img {
+    width: 500px; /* Tamaño uniforme */
+    height: auto; /* Mantener la misma altura */
+    object-fit: cover; /* Ajustar la imagen sin distorsionarla */
+    border-radius: 10px; /* Bordes redondeados opcionales */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(0%); } /* Retener la primera imagen por más tiempo */
+    33% { transform: translateX(-100%); }
+    53% { transform: translateX(-100%); } /* Retener la segunda imagen por más tiempo */
+    66% { transform: translateX(-200%); }
+    86% { transform: translateX(-200%); } /* Retener la tercera imagen por más tiempo */
+    100% { transform: translateX(0%); }
+}
+
+/* Estilos para la galería de imágenes */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-gallery img {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.image-item {
+    position: relative;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Diseño desigual para la galería */
+.image-gallery .image-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.image-gallery .image-item:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.image-gallery .image-item:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+/* Estilos para la sección de donaciones */
+#donaciones {
+    width: 40%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto; /* Centra la sección horizontalmente */
+    position: relative; /* Cambia la posición a relativa */
+    top: 0; /* Resetea la posición superior */
+    right: 0; /* Resetea la posición derecha */
+}
+/* Estilos para la sección de contacto */
+#contacto {
+    width: 60%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    text-align: center;
+}
+
+#contacto h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contacto input, #contacto textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+}
+
+#contacto button {
+    background-color: #444;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.1rem;
+}
+
+#contacto button:hover {
+    background-color: #666;
+}
+#nosotros {
+    width: 60%;
+    margin: 50px auto; /* Centra la sección horizontalmente */
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc; /* Añade un borde */
+    border-radius: 10px; /* Bordes redondeados opcionales */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra */
+    text-align: center; /* Centra el texto */
+    position: relative; /* Necesario para posicionar las imágenes absolutamente */
+}
+
+#nosotros h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#nosotros p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.imagen-container {
+    position: relative;
+}
+
+.imagen-hoja1 {
+    position: absolute;
+    width: 200px; /* Tamaño pequeño */
+    height: auto;
+    top: -300px; /* Fuera del rectángulo blanco */
+    left: -430px; /* Fuera del borde izquierdo */
+    transform: rotate(30deg); /* Inclinación ligera */
+}
+
+.imagen-hoja2 {
+    position: absolute;
+    width: 200px; /* Tamaño pequeño */
+    height: auto;
+    top: -70px; /* Fuera del rectángulo blanco */
+    left: -400px; /* Fuera del borde izquierdo */
+    transform: rotate(30deg); /* Inclinación ligera */
+}
+
+.imagen-hoja3 {
+    position: absolute;
+    width: 200px; /* Tamaño pequeño */
+    height: auto;
+    bottom: -330px; /* Fuera del rectángulo blanco */
+    left: -370px; /* Fuera del borde izquierdo */
+    transform: rotate(30deg); /* Inclinación ligera */
+}
+
+/* Ajustar el contenedor principal */
+main, .producto-container {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: center; /* Centra verticalmente los elementos */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limita el ancho del contenedor */
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Estilo para el botón "Comprar" */
+.btn-comprar, .btn-agregar {
+    display: inline-block;
+    padding: 3px 6px; /* Reducido el padding para hacerlo más pequeño */
+    background-color: #bb7f44;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.8rem; /* Reduje el tamaño de la fuente */
+    margin-top: 5px;
+    transition: background 0.3s;
+    margin: 2px auto; /* Margen reducido */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 120px; /* Reducir aún más el ancho */
+    max-height: 20px; /* Limitar la altura */
+    display: flex; /* Para ajustar el contenido sin expandir */
+    align-items: center; /* Centrar verticalmente el texto */
+    justify-content: center; /* Centrar horizontalmente */
+    overflow: hidden; /* Evitar que el contenido expanda el cuadro */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    
+}
+
+.btn-comprar:hover, .btn-agregar:hover {
+    background-color: #555;
+}
+.producto-container {
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos estén en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: flex-end; /* Centra verticalmente los elementos */
+    margin: 50px auto; /* Centra el contenedor en la página */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Limita el ancho del contenedor */
+    text-align: left;
+}
+
+.producto-imagen {
+    width: 40%;
+    text-align: center;
+    margin-bottom: 20px;;
+}
+
+.producto-imagen img {
+    width: 100%;
+    max-width: 300px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.producto-detalles {
+    text-align: left;
+    max-width: 60%;
+}
+
+.producto-detalles h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.producto-detalles p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.producto-detalles .precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #bb7a44c2;
+    margin-bottom: 20px;
+}
+
+.producto-detalles .btn-comprar, .producto-detalles .btn-agregar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f18f66;
+    color: white;
+    text-align: none;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.producto-detalles .btn-comprar:hover, .producto-detalles .btn-agregar:hover {
+    background-color: #ab7137;
+}
+
+.btn-agregar {
+    background-color: #444;
+}
+
+/* Estilo para el contenedor del producto */
+.producto-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Contenedor de la imagen */
+.producto-imagen img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de los detalles del producto */
+.producto-detalles {
+    max-width: 500px;
+    margin-left: 30px;
+}
+
+.producto-detalles h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.producto-detalles p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.producto-detalles .precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #bb7f44;
+}
+/* Botones de acción */
+.btn-agregar, .btn-comprar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #bb7f44;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-agregar:hover, .btn-comprar:hover {
+    background-color: #ab7137;
+}
+
+/* Estilos para la sección ¿Quiénes somos? */
+.quienes-somos {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+    background: #feeccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quienes-somos h2 {
+    color: #bb7f44;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.quienes-somos p {
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+/* Estilo para h2 y p dentro de un recuadro blanco */
+h2, p {
+    text-align: center;
+    background-color: #fff; /* Fondo blanco */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px auto; /* Espaciado externo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 600px;
+}
+/* Estilo para los párrafos de promoción de ropa y precio */
+.promo-text {
+    background-color: #fff; /* Fondo blanco */
+    padding: 4px 6px; /* Espaciado interno reducido */
+    margin: 2px auto; /* Reducir margen externo */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 500px; /* Ancho máximo ligeramente reducido */
+    text-align: center; /* Centrar el texto */
+    display: inline-block; /* Mantener los cuadros en línea */
+}
+/* Estilo específico para los títulos de las prendas */
+.promo-title {
+    background-color: #fff; /* Fondo blanco */
+    padding: 2px 4px; /* Espaciado interno reducido */
+    margin: 2px auto; /* Reducir margen externo */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    max-width: 200px; /* Ancho más reducido */
+    text-align: center; /* Centrar el texto */
+    display: inline-block; /* Mantener los cuadros en línea */
+    font-size: 1.2rem; /* Tamaño de fuente aumentado */
+    width: 100px; /* Ancho más reducido */
+    height: 90px; /* Altura reducida */
+}
+/* Estilo específico para los párrafos de precio */
+.promo-price {
+    background-color: #fff;
+    padding: 2px 4px; /* Espaciado interno reducido */
+    margin: 0 auto; /* Casi sin margen externo */
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    width: 120px; /* Ancho más reducido */
+    height: 18px; /* Altura reducida */
+    text-align: center;
+    display: flex; /* Permite mejor control del tamaño */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    font-size: 0.9rem; /* Tamaño de fuente reducido si es necesario */
+    line-height: 1; /* Evita que el texto haga crecer el cuadro */
+    white-space: nowrap; /* Evita saltos de línea */
+    overflow: hidden; /* Evita que el contenido expanda el cuadro */
+}
+/* Contenedor de imágenes decorativas */
+.decorative-images {
+    position: relative;
+    width: 100%;
+    height: auto; /* Ajusta la altura según el contenido */
+    display: flex;
+    justify-content: space-around; /* Distribuye las imágenes de forma uniforme */
+    flex-wrap: wrap; /* Permite que las imágenes se acomoden si no hay suficiente espacio */
+    padding: 20px 0; /* Añade espacio alrededor */
+}
+
+/* Estilos generales para las imágenes */
+.decorative-image {
+    opacity: 0.7; /* Ajuste de visibilidad */
+    pointer-events: none; /* Evita interferencia con el usuario */
+    max-width: 120px; /* Tamaño uniforme */
+    height: auto;
+}
+
+/* Posicionamiento específico de cada imagen */
+.decorative-image:nth-child(1) {
+    align-self: flex-start; /* Ubica la imagen en la parte superior */
+}
+
+.decorative-image:nth-child(2) {
+    align-self: center; /* Ubica la imagen en el centro */
+}
+
+.decorative-image:nth-child(3) {
+    align-self: flex-end; /* Ubica la imagen en la parte inferior */
+}
+
+/* Estilos para Pago.html */
+.pago-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pago-container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pago-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pago-container label {
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+}
+
+.pago-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pago-container input:focus {
+    outline: none;
+    border-color: #bb7f44;
+    box-shadow: 0 0 5px rgba(187, 127, 68, 0.5);
+}
+
+.pago-container button {
+    padding: 10px 20px;
+    background-color: #bb7f44;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pago-container button:hover {
+    background-color: #ab7137;
+}
+
+/* Estilo para el botón "Regresar" */
+.btn-regresar {
+    display: inline-block;
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    top: 20px; /* Ajusta la posición vertical */
+    right: 20px; /* Ajusta la posición horizontal */
+    padding: 10px 20px;
+    background-color: #bb7f44;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.btn-regresar:hover {
+    background-color: #ab7137;
+}
+
+/* Estilos para la confirmación de pago */
+.confirmacion-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mensaje-exito h2, .mensaje-error h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.mensaje-exito p, .mensaje-error p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.mensaje-exito {
+    color: #2e7d32; /* Verde para éxito */
+}
+
+.mensaje-error {
+    color: #d32f2f; /* Rojo para error */
+}
+
+.mensaje-exito a, .mensaje-error a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #bb7f44;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.mensaje-exito a:hover, .mensaje-error a:hover {
+    background-color: #ab7137;
+}
+
+/* Estilos especiales para las hojas decorativas en pago.html */
+.decorative-leaf {
+    position: absolute;
+    width: 100px; /* Ajusta el tamaño de las hojas */
+    height: auto;
+    opacity: 0.5; /* Transparencia para un efecto sutil */
+    transform: scale(1) rotate(0deg); /* Escala y rotación inicial */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transiciones suaves */
+    z-index: -1; /* Asegura que estén detrás del contenido */
+}
+
+.decorative-leaf:hover {
+    transform: scale(1.2) rotate(15deg); /* Aumenta el tamaño y rota al pasar el ratón */
+    opacity: 0.8; /* Aumenta la visibilidad */
+}
+
+/* Posicionamiento específico de las hojas */
+.decorative-leaf.left {
+    top: 10%;
+    left: -50px; /* Ajusta la posición según sea necesario */
+}
+
+.decorative-leaf.right {
+    top: 10%;
+    right: -50px; /* Ajusta la posición según sea necesario */
+}
+
+.decorative-leaf.bottom-left {
+    bottom: 10%;
+    left: -50px; /* Ajusta la posición según sea necesario */
+}
+
+.decorative-leaf.bottom-right {
+    bottom: 10%;
+    right: -50px; /* Ajusta la posición según sea necesario */
+}
+
+/* Animación flotante para las hojas */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+.decorative-leaf {
+    animation: float 5s infinite ease-in-out; /* Aplica la animación flotante */
+}
+
+/* Estilos especiales para las hojas decorativas en pago.html */
+
+.decorative-image {
+    position: absolute;
+    width: 100px; /* Ajusta el tamaño de las hojas */
+    height: auto;
+    opacity: 0.5; /* Transparencia para un efecto sutil */
+    transform: scale(1) rotate(0deg); /* Escala y rotación inicial */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transiciones suaves */
+    z-index: -1; /* Asegura que estén detrás del contenido */
+}
+
+.decorative-image:hover {
+    transform: scale(1.2) rotate(15deg); /* Aumenta el tamaño y rota al pasar el ratón */
+    opacity: 0.8; /* Aumenta la visibilidad */
+}
+
+/* Posicionamiento específico de las hojas */
+.decorative-image:nth-child(1) {
+    top: 20%;
+    left: -120px;
+}
+
+.decorative-image:nth-child(2) {
+    top: 20%;
+    right: -120px;
+    transform: translateY(-50%);
+}
+
+.decorative-image:nth-child(3) {
+    bottom: 20%;
+    left: -120px;
+}
+
+.decorative-image:nth-child(4) {
+    bottom: 20%;
+    right: -120px;
+    transform: traslateY(-50%);
+}
+
+/* Animación flotante para las hojas */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+.decorative-image {
+    animation: float 5s infinite ease-in-out; /* Aplica la animación flotante */
+}
+
+/* Ajuste del z-index del contenedor blanco */
+.pago-container {
+    position: relative; /* Asegura que el z-index funcione */
+    z-index: 2; /* Coloca el contenedor blanco delante de las hojas decorativas */
+}
+
+/* Estilo para la imagen decorativa grande en comprar.html */
+.decorative-image-large {
+    position: fixed;
+    width: 270px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    opacity: 0.7; /* Transparencia para un efecto sutil */
+    transform: rotate(45deg); /* Rotación para un efecto esquineado */
+    top: 20%; /* Ajusta la posición vertical */
+    right: 0; /* Ajusta la posición horizontal */
+    z-index: -1; /* Asegura que esté detrás del contenido principal */
+    animation: float 5s infinite ease-in-out; /* Aplica la animación flotante */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transiciones suaves */
+}
+
+.decorative-image-large:hover {
+    transform: rotate(45deg) scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+    opacity: 0.9; /* Aumenta la visibilidad */
+}
+
+/* Animación flotante para las hojas */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg); /* Mantiene la rotación inicial */
+    }
+    50% {
+        transform: translateY(-10px) rotate(45deg); /* Flota hacia arriba */
+    }
+}
+
+/* Estilo para la hoja decorativa grande en el lado izquierdo */
+.decorative-image-left {
+    position: fixed;
+    width: 270px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    opacity: 0.7; /* Transparencia para un efecto sutil */
+    transform: rotate(-45deg); /* Rotación para un efecto esquineado hacia la izquierda */
+    top: -20%; /* Ajusta la posición vertical */
+    left: 0; /* Alinea la imagen al borde izquierdo de la pantalla */
+    z-index: -1; /* Asegura que esté detrás del contenido principal */
+    animation: float 5s infinite ease-in-out; /* Aplica la animación flotante */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transiciones suaves */
+}
+
+.decorative-image-left:hover {
+    transform: rotate(-45deg) scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+    opacity: 0.9; /* Aumenta la visibilidad */
+}
+
+/* Estilo para la hoja decorativa 4 en contacto.html */
+.decorative-image-left-hoja4 {
+    position: absolute;
+    width: 300px; /* Tamaño mediano */
+    height: auto;
+    top: 500; /* Centrada verticalmente */
+    left: -50; /* Separada del borde izquierdo */
+    transform: translateY(-45%); /* Centrada verticalmente sin rotación */
+    opacity: 0.7; /* Transparencia para un efecto sutil */
+    z-index: -1; /* Asegura que esté detrás del contenido */
+    animation: none; /* Elimina cualquier animación */
+    transition: none; /* Elimina transiciones */
+}
+
+/* Estilo para la hoja decorativa 3 en contacto.html */
+.decorative-image-left-hoja3 {
+    position: absolute;
+    width: 300px; /* Tamaño grande */
+    height: auto;
+    top: 590px; /* Baja la hoja para que no tape el logotipo */
+    left: -50px; /* Ligeramente fuera del borde izquierdo */
+    transform: rotate(-45deg); /* Rotación para que quede esquineada */
+    opacity: 0.7; /* Transparencia para un efecto sutil */
+    z-index: -1; /* Asegura que esté detrás del contenido */
+    animation: none; /* Elimina cualquier animación */
+    transition: none; /* Elimina transiciones */
+}
+
+/* Estilo para la hoja decorativa derecha */
+.decorative-image-right {
+    position: fixed;
+    width: auto;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* Estilo para la hoja decorativa izquierda en confirmacion.html */
+.decorative-image-left-confirmacion {
+    position: absolute;
+    width: 200px; /* Tamaño ajustado */
+    height: auto;
+    top: 40%; /* Posición vertical */
+    left: -350px; /* Separada del borde izquierdo */
+    transform: rotate(40deg); /* Rotación para que quede esquineada */
+    opacity: 0.7; /* Transparencia */
+    z-index: -1; /* Detrás del contenido */
+    animation: none; /* Sin animación */
+    transition: none; /* Sin transiciones */
+}
+
+/* Estilo para la hoja decorativa derecha en confirmacion.html */
+.decorative-image-right-confirmacion {
+    position: absolute;
+    width: 200px; /* Tamaño ajustado */
+    height: auto;
+    top: 40%; /* Posición vertical más abajo */
+    right: -350px; /* Separada del borde derecho */
+    transform: rotate(-80deg); /* Rotación para que quede esquineada */
+    opacity: 0.7; /* Transparencia */
+    z-index: -1; /* Detrás del contenido */
+    animation: none; /* Sin animación */
+    transition: none; /* Sin transiciones */
+}
+
+/* Ajuste del z-index del rectángulo blanco */
+.confirmacion-container {
+    position: relative; /* Asegura que el z-index funcione */
+    z-index: 2; /* Coloca el rectángulo blanco delante de las hojas decorativas */
+}
+
+/* Estilo para la hoja 3 (lado izquierdo) */
+.imagen-hoja.left {
+    position: absolute;
+    width: 100px; /* Tamaño pequeño */
+    height: auto;
+    top: 50%; /* Centrada verticalmente */
+    left: -120px; /* Fuera del borde izquierdo */
+    transform: translateY(-50%) rotate(-15deg); /* Centrada y ligeramente inclinada */
+    z-index: 1; /* Detrás del contenido principal */
+}
+
+/* Estilo para la hoja 4 (lado derecho) */
+.imagen-hoja.right {
+    position: absolute;
+    width: 100px; /* Tamaño pequeño */
+    height: auto;
+    top: 50%; /* Centrada verticalmente */
+    right: -120px; /* Fuera del borde derecho */
+    transform: translateY(-50%) rotate(15deg); /* Centrada y ligeramente inclinada */
+    z-index: 1; /* Detrás del contenido principal */
+}
+
+/* Ajuste del contenedor principal para que las hojas queden fuera */
+.confirmacion-container {
+    position: relative; /* Necesario para posicionar las hojas respecto al contenedor */
+    z-index: 2; /* Asegura que el recuadro blanco esté delante de las hojas */
+}
+
+/* Estilo para el botón "Volver al inicio" */
+.btn-volver {
+    display: inline-block;
+    margin-top: -90px; /* Ajusta este valor para moverlo más arriba */
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    top: 40px; /* Ajusta la posición vertical */
+    right: 20px; /* Ajusta la posición horizontal */
+    padding: 10px 20px;
+}
+
+#videos {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido al lado derecho */
+    margin: 20px 20px 20px 0; /* Espaciado alrededor del contenedor */
+}
+
+#videos video {
+    max-width: 600px; /* Ajusta el tamaño máximo del video */
+    height: auto;
+    border: 2px solid #ccc; /* Opcional: agrega un borde */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    margin-right: 80px;
+}

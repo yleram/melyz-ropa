@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Pago</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Ropa//logo.png" alt="Logotipo de Melyz" class="logo">
+        </div>
+        <h1>Estado del Pago</h1>
+    </header>
+    <main>
+        <section class="confirmacion-container">
+            <div class="imagen-container">
+                <img src="Ropa/hoja 1.png" alt="Imagen de Hoja 1" class="imagen-hoja decorative-image-left-confirmacion">
+                <img src="Ropa/hoja 2.png" alt="Imagen de Hoja 2" class="imagen-hoja decorative-image-right-confirmacion">
+                <img src="Ropa/hoja 3.png" alt="Imagen de Hoja 3" class="imagen-hoja left">
+                <img src="Ropa/hoja 4.png" alt="Imagen de Hoja 4" class="imagen-hoja right">
+            </div>
+            <!-- Mensaje de éxito -->
+            <div id="exito" class="mensaje-exito">
+                <h2>¡Pago realizado con éxito! 🎉</h2>
+                <p>Gracias por tu compra. Hemos recibido tu pago y tu pedido está siendo procesado.</p>
+                <a href="index.html" class="btn-volver">Volver al inicio</a>
+            </div>
+
+            <!-- Mensaje de error -->
+            <div id="error" class="mensaje-error" style="display: none;">
+                <h2>⚠️ No se pudo realizar el pago</h2>
+                <p>Hubo un problema al procesar tu pago. Por favor, intenta nuevamente o contacta con soporte.</p>
+                <a href="pago.html" class="btn-regresar">Intentar de nuevo</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Simulación del estado del pago (éxito o error)
+        const pagoExitoso = true; // Cambia a false para probar el mensaje de error
+
+        if (pagoExitoso) {
+            document.getElementById('exito').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+        } else {
+            document.getElementById('exito').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

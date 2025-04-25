@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra | Melyz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="javascript:history.back()" class="btn-regresar">Regresar</a>
+    <header>
+		<div class="logo-container">
+            <img src="Ropa//logo.png" alt="Logotipo de Melyz" class="logo">
+            <div class="decorative-images">
+            <img src="Ropa/hoja 6.png" alt="Decorative Image Large" class="decorative-image-large">
+            </div>
+        </div>
+        <h1 class="header-title">Melyz | Compra</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="donaciones.html">Donaciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+   <div class="producto-container">
+        <!-- Imagen del producto -->
+        <div class="producto-imagen">
+            <img id="producto-imagen" src="" alt="Imagen del producto">
+        </div>
+
+        <!-- Detalles del producto -->
+        <div class="producto-detalles">
+            <h2 id="producto-nombre">Nombre del producto</h2>
+            <p id="producto-descripcion">Descripción del producto</p>
+            <p class="precio" id="producto-precio">Precio: $0 MXN</p>
+            
+            <a href="carrito.html" class="btn-agregar">Agregar al carrito</a>
+            <a href="pago.html" class="btn-comprar">Comprar ahora</a>
+        </div>
+    </div>
+ 
+    <script>
+        // Obtén los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const imagen = params.get('imagen');
+        const titulo = params.get('titulo');
+        const descripcion = params.get('descripcion');
+        const precio = params.get('precio');
+    
+        // Actualiza el contenido de la página con los datos del producto
+        if (imagen && titulo && descripcion && precio) {
+            document.getElementById('producto-imagen').src = imagen;
+            document.getElementById('producto-nombre').textContent = titulo;
+            document.getElementById('producto-descripcion').textContent = descripcion;
+            document.getElementById('producto-precio').textContent = `Precio: ${precio}`;
+        } else {
+            // Si no hay datos, muestra un mensaje de error
+            document.querySelector('.producto-container').innerHTML = '<p>Producto no encontrado.</p>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+-<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Melyz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="javascript:history.back()" class="btn-regresar">Regresar</a>
+    <header>
+        <div class="logo-container">
+            <img src="Ropa//logo.png" alt="Logotipo de Melyz" class="logo">
+            <img src="Ropa/hoja 4.png" alt="Decoración izquierda" class="decorative-image-left-hoja4">
+            <img src="Ropa/hoja 8.png" alt="Decoración derecha" class="decorative-image-right">
+            <img src="Ropa/hoja 3.png" alt="Decoración izquierda" class="decorative-image-left-hoja3">
+        </div>
+        <h1>Contacto</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="catalogo.html">Catálogo</a>
+                    <ul class="submenu">
+                        <li><a href="blusas.html">Blusas</a></li>
+                        <li><a href="pantalones.html">Pantalones</a></li>
+                        <li><a href="chamarras.html">Chamarras/Sudaderas</a></li>
+                        <li><a href="zapatos.html">Zapatos</a></li>
+                        <li><a href="vestidos.html">Vestidos/Faldas</a></li>
+                    </ul>
+                </li>
+                <li><a href="donaciones.html">Donaciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="contacto">
+            <h2>Ponte en contacto con nosotros</h2>
+            <p>Si tienes preguntas, quieres donar o simplemente quieres saber más sobre nosotros, aquí tienes nuestras formas de contacto:</p>
+            
+            <div class="contact-info">
+                <h3>📞 Teléfono</h3>
+                <p>+52 527 903 7223</p>
+                
+                <h3>📧 Correo Electrónico</h3>
+                <p><a href="melyzzero@gmail.com"></a></p>
+                
+                <h3>📷 Instagram</h3>
+                <p><a href="https://www.instagram.com/carlet.zero"target="_blank">@Carlet.Zero</a></p>
+            </div>
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form action="submit-contacto.html" method="POST">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" required>
+                    
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
